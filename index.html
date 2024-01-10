@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <form name="name"  action=""  onsubmit=" return validateForm()"> Name: <input type="text" name="inname" id=""> 
+        <input type="submit" name="" id="" value="submit">
+    </form>
+    <br>
+    <br>
+    <form action=""> 1st input: <input type="text" name="" id="first"><br>
+    2nd Input:<input type="text" name="" id="second"> <br>
+    <input type="button" name="" id="" onclick="multipleby()" value="mul">
+    <input type="button" name="" id="" onclick="div()" value="div">
+</form>
+<p> THE RESULT IS : <span id="result"></span></p>
+<br>
+<br>
+<br>
+<br>
+<button id="one" onclick="colored()">CLICK THE BUTTON TO CHANGE THE COLOR</button>
+    <script>
+        function validateForm(){
+            var f=document.forms["name"]["inname"].value;
+            if(f==="")
+            {
+                alert("Name must be filled");
+                return false;
+            }
+        }
+        function colored()
+        {
+            var p=document.getElementById("one");
+            p.style.backgroundColor="red";
+        }
+        function multipleby(){
+            const m=Number(document.getElementById("first").value)
+            const n=Number(document.getElementById("second").value)
+            const f=m*n;
+            const result=document.getElementById("result")
+            result.innerHTML=f
+        }
+        function div(){
+            const m=Number(document.getElementById("first").value)
+            const n=Number(document.getElementById("second").value)
+            const f=m/n;
+            const result=document.getElementById("result")
+            result.innerHTML=f
+        }
+    </script>
+</body>
+</html>
